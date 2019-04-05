@@ -1,8 +1,15 @@
+<<<<<<< HEAD
+target/
+=======
 # Intelij
+>>>>>>> 703286d464c11cd00ab530c78b2187125911ddd0
 .idea/
 *.iml
 *.iws
 
+<<<<<<< HEAD
+=======
 # Maven
 log/
 target/
+>>>>>>> 703286d464c11cd00ab530c78b2187125911ddd0
