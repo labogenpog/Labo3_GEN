@@ -1,2 +1,2 @@
-public class MGame {
+public class MGameTest {
 }

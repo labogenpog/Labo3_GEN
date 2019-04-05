@@ -1,2 +1,2 @@
-public class Board {
+public class BoardTest {
 }
