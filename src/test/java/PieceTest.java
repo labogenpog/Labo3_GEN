@@ -1,3 +1,3 @@
-public class Piece {
+public class PieceTest {
 
 }
