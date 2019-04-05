@@ -2,5 +2,4 @@ language: java
 
 script:
   - echo "RESBot at work... let's see if code compiles and tests pass!"
-  - cd Labo3_GEN
   - mvn clean package
