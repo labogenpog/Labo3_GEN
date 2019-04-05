@@ -4,13 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-<<<<<<< HEAD
-    <groupId>TommIsaiaBasile</groupId>
-    <artifactId>Labo3_GEN</artifactId>
-=======
     <groupId>Labo3_GEN</groupId>
     <artifactId>Monopoly</artifactId>
->>>>>>> 703286d464c11cd00ab530c78b2187125911ddd0
     <version>1.0-SNAPSHOT</version>
 
 
