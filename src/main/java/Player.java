@@ -8,7 +8,7 @@ public class Player {
         this.name = name;
         this.board = board;
         this.dices = dices;
-        piece = new Piece(name+"' token", board.getSquareIndex(0));
+        piece = new Piece(name+"'s token", board.getSquareIndex(0));
     }
 
     void takeTurn(){
@@ -24,4 +24,17 @@ public class Player {
         piece.setLocation( newLoc );
 
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Piece getPiece() {
+        return piece;
+    }
+
 }
