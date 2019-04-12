@@ -1,8 +1,8 @@
 public class Player {
-    String name;
-    Board board ;
-    Dice dices [];
-    Piece piece ;
+    private String name;
+    private Board board ;
+    private Dice dices [];
+    private Piece piece ;
 
     Player(String name, Board board, Dice[] dices){
         this.name = name;
