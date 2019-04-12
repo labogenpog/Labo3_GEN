@@ -8,6 +8,9 @@ public class Board {
     Board(){
         squares.ensureCapacity( 40 );
         // create 40 squares ordered
+        for(int i=0; i < 40; ++i){
+            squares.add( new Square( "case : " + i ) );
+        }
 
     }
 

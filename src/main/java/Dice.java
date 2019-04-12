@@ -2,9 +2,9 @@ public class Dice {
 
     char faceValue;
 
-    char roll (){
+    void roll (){
 
-        return faceValue;
+        faceValue = (char)(6.0 * (char)(Math.random()) + 1 );
     }
 
     public char getFaceValue() {

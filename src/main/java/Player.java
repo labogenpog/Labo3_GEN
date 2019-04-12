@@ -12,6 +12,16 @@ public class Player {
     }
 
     void takeTurn(){
+        char fvTot = 0;
+        // Joue les dés
+        for(Dice dice : dices){
+            dice.roll();
+            fvTot += dice.getFaceValue();
+        }
+        Square oldLoc = piece.getLocation();
+        Square newLoc = board.getSquare( oldLoc, fvTot );
+
+        piece.setLocation( newLoc );
 
     }
 }
