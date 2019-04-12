@@ -10,7 +10,7 @@ public class BoardTest {
         Board board = new Board();
 
         assertNotNull(board.getSquareIndex( 39 ));
-        assertEquals("case : 5", board.getSquareIndex( 2 ).getName());
+        assertEquals("case : 5", board.getSquareIndex( 5 ).getName());
     }
 
 
