@@ -1,18 +1,58 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MGame {
 
-    int roundCnt;
+    // 20 rounds, following the slides
+    private int roundCnt = 20;
+
     // between 2 and 8 players
-    ArrayList<Player> players = new ArrayList<Player>();
-    Dice dices [] = new Dice[2] ;
-    Board board = new Board() ;
+    private int playerCount;
+    private ArrayList<Player> players;
+    private Dice dices[] = new Dice[2];
+    private Board board = new Board() ;
+
+    public MGame(int playerCount){
+        this.playerCount = playerCount;
+        players = new ArrayList<Player>(this.playerCount);
+
+        dices[0] = new Dice();
+        dices[1] = new Dice();
+        for(int i = 0; i < playerCount; ++i){
+            players.add(i, new Player("Joueur" + i, board, dices));
+        }
+    }
 
     public void playGame(){
-
+        for(int i = 0; i < roundCnt; ++i){
+            playRound();
+        }
     }
     private void playRound(){
-
+        for(Player p : players){
+            p.takeTurn();
+        }
     }
 
+    public static void main(String args[]){
+        int numberPlayers = 0;
+        Scanner in = new Scanner(System.in);
+        while(true){
+            System.out.println("How many players are there ?");
+            try{
+                numberPlayers = in.nextInt();
+                if(numberPlayers < 2 || numberPlayers > 8){
+                    throw new java.lang.IllegalArgumentException();
+                }
+            }
+            catch(Exception e){
+                System.out.println("Please enter a valid input");
+                in.nextLine();
+                continue;
+            }
+            break;
+        }
+        MGame game = new MGame(numberPlayers);
+        game.playGame();
+    }
 }
