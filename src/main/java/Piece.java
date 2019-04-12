@@ -1,6 +1,6 @@
 public class Piece {
-    String name;
-    Square location;
+    private String name;
+    private Square location;
 
     Piece(String name, Square location){
         this.name = name;
@@ -8,7 +8,7 @@ public class Piece {
     }
 
     Square getLocation (){
-        return new Square();
+        return location;
     }
 
     void setLocation(Square newLoc){
