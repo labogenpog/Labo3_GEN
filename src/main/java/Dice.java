@@ -7,7 +7,8 @@ public class Dice {
 
     void roll (){
 
-        faceValue = (char)(6.0 * (char)(Math.random()) + 1 );
+        int random = (int)(Math.random() * 6) + 1;
+        faceValue = (char)random;
     }
 
     public char getFaceValue() {
@@ -16,8 +17,6 @@ public class Dice {
 
     public ArrayList<Integer> values(){
         ArrayList<Integer> values = new ArrayList<Integer>( Arrays.asList(1,2,3,4,5,6));
-
-        // char values[] = {1,2,3,4,5,6};
         return values;
     }
 }

@@ -11,7 +11,7 @@ public class Board {
         squares.ensureCapacity( SIZE );
         // create 40 squares ordered
         for(int i=0; i < SIZE; ++i){
-            squares.add( new Square( "case : " + i ) );
+            squares.add( new Square( "C: " + i ) );
         }
 
     }

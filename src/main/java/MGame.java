@@ -31,7 +31,9 @@ public class MGame {
     private void playRound(){
         for(Player p : players){
             p.takeTurn();
+            System.out.print( p.getName() + " : " + p.getPiece().getLocation().getName() + " | ");
         }
+        System.out.println( " " );
     }
 
     public static void main(String args[]){
