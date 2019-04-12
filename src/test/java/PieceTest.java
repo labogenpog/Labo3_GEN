@@ -5,6 +5,17 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class PieceTest {
 
+    @Test
+    void testGetName(){
+        Piece piece = new Piece( "King", new Square( "Fin" ) );
+        assertEquals("King", piece.getName());
+    }
+    @Test
+    void testSetName(){
+        Piece piece = new Piece( "King", new Square( "Fin" ) );
+        piece.setName( "Queen" );
+        assertEquals("Queen", piece.getName());
+    }
 
     @Test
     void testGetLocation(){
