@@ -1,4 +1,4 @@
-public class Square {
+public abstract class Square {
     private String name;
 
     Square(String name){
@@ -8,4 +8,6 @@ public class Square {
     String getName(){
         return name;
     }
+
+    public abstract void landedOn(Player p);
 }

@@ -6,7 +6,6 @@ public class Dice {
     private char faceValue;
 
     void roll (){
-
         int random = (int)(Math.random() * 6) + 1;
         faceValue = (char)random;
     }

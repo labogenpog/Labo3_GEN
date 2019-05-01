@@ -9,29 +9,27 @@ public class MGame {
     // between 2 and 8 players
     private int playerCount;
     private ArrayList<Player> players;
-    private Dice dices[] = new Dice[2];
     private Board board = new Board() ;
 
     public MGame(int playerCount){
         this.playerCount = playerCount;
         players = new ArrayList<Player>(this.playerCount);
 
-        dices[0] = new Dice();
-        dices[1] = new Dice();
         for(int i = 0; i < playerCount; ++i){
-            players.add(i, new Player("Joueur" + i, board, dices));
+            players.add(i, new Player("Joueur " + (i + 1), board));
         }
     }
 
     public void playGame(){
         for(int i = 0; i < roundCnt; ++i){
+            System.out.println("Tour " + (i + 1) + " :");
             playRound();
         }
     }
     private void playRound(){
         for(Player p : players){
             p.takeTurn();
-            System.out.print( p.getName() + " : " + p.getPiece().getLocation().getName() + " | ");
+            System.out.print( p.getName() + " : " + p.getPiece().getLocation().getName() + " : " + p.getNetWorth() + " | ");
         }
         System.out.println( " " );
     }
