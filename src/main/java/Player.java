@@ -1,28 +1,27 @@
 public class Player {
     private String name;
     private Board board ;
-    private Dice dices [];
+    private Cup cup;
     private Piece piece ;
+    private int money;
 
-    Player(String name, Board board, Dice[] dices){
+    Player(String name, Board board){
         this.name = name;
         this.board = board;
-        this.dices = dices;
+        this.cup = new Cup(2);
+        this.money = 1500;
         piece = new Piece(name+"'s token", board.getSquareIndex(0));
     }
 
     void takeTurn(){
-        char fvTot = 0;
-        // Joue les dés
-        for(Dice dice : dices){
-            dice.roll();
-            fvTot += dice.getFaceValue();
-        }
+        cup.roll();
+        char fvTot = (char) cup.getTotal();
+
         Square oldLoc = piece.getLocation();
         Square newLoc = board.getSquare( oldLoc, fvTot );
 
         piece.setLocation( newLoc );
-
+        newLoc.landedOn(this);
     }
 
     public String getName() {
@@ -36,5 +35,11 @@ public class Player {
     public Piece getPiece() {
         return piece;
     }
+
+    public void addCash(int income){ money += income; }
+
+    public void reduceCash(int moneyLost){ money -= moneyLost; }
+
+    public int getNetWorth(){ return money; }
 
 }

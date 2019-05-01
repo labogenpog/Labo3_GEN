@@ -24,12 +24,12 @@ public class BoardTest {
 
     @Test
     void testGetSquareIndex(){
-        assertEquals("C: 5", board.getSquareIndex( 5 ).getName());
+        assertEquals("Case 5", board.getSquareIndex( 5 ).getName());
     }
 
     @Test
     void testGetIndex(){
-        Square square = new Square("C: 2");
+        Square square = new RegularSquare("C: 2");
         assertNotEquals( 2,  board.getIndex( square ));
 
 
@@ -43,19 +43,19 @@ public class BoardTest {
 
         Square newLoc = board.getSquare(oldLoc, fvTot);
 
-        assertEquals("C: 15", newLoc.getName());
+        assertEquals("Case 15", newLoc.getName());
 
         // Rebouclement
         fvTot = 100;
         Square overLoc = board.getSquare(newLoc, fvTot);
         // (15 + 100) % 40 = 35
-        assertEquals("C: 35", overLoc.getName());
+        assertEquals("Case 35", overLoc.getName());
 
         // Negatif
         fvTot = (char)-1;
         Square negatveLoc = board.getSquare(overLoc, fvTot);
         // (35 + 65535) & 40  => 10
-        assertEquals("C: 10", negatveLoc.getName());
+        assertEquals("Jail", negatveLoc.getName());
     }
 
 

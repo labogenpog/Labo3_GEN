@@ -7,25 +7,25 @@ public class PieceTest {
 
     @Test
     void testGetName(){
-        Piece piece = new Piece( "King", new Square( "Fin" ) );
+        Piece piece = new Piece( "King", new RegularSquare( "Fin" ) );
         assertEquals("King", piece.getName());
     }
     @Test
     void testSetName(){
-        Piece piece = new Piece( "King", new Square( "Fin" ) );
+        Piece piece = new Piece( "King", new IncomeTaxSquare( "Fin" ) );
         piece.setName( "Queen" );
         assertEquals("Queen", piece.getName());
     }
 
     @Test
     void testGetLocation(){
-        Piece piece = new Piece( "King", new Square( "Fin" ) );
+        Piece piece = new Piece( "King", new GoSquare( "Fin" ) );
         assertEquals("Fin", piece.getLocation().getName());
     }
 
     @Test
     void testSetLocation(){
-        Square square = new Square( "random" );
+        Square square = new GoToJailSquare( "random" );
         Piece piece = new Piece( "King", null );
 
         assertNull( piece.getLocation());

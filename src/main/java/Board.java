@@ -10,11 +10,21 @@ public class Board {
     Board(){
         squares.ensureCapacity( SIZE );
         // create 40 squares ordered
-        squares.add(new Square("GO"));
+        squares.add(new GoSquare("Go"));
         for(int i=1; i < SIZE; ++i){
-            squares.add( new Square( "C: " + i ) );
+            if(i == 10){
+                squares.add(new RegularSquare("Jail"));
+            }
+            else if(i == 4){
+                squares.add(new IncomeTaxSquare("Tax Square"));
+            }
+            else if(i == 30){
+                squares.add(new GoToJailSquare("Go to Jail", squares.get(10)));
+            }
+            else{
+                squares.add(new RegularSquare("Case " + i ));
+            }
         }
-
     }
 
     Square getSquare(Square oldLoc, char fvTot){
