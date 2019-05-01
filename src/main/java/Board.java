@@ -10,7 +10,8 @@ public class Board {
     Board(){
         squares.ensureCapacity( SIZE );
         // create 40 squares ordered
-        for(int i=0; i < SIZE; ++i){
+        squares.add(new Square("GO"));
+        for(int i=1; i < SIZE; ++i){
             squares.add( new Square( "C: " + i ) );
         }
 
