@@ -16,6 +16,7 @@ public class DiceTest {
         int value = dice.getFaceValue();
         boolean test = dice.values().contains( value );
         assertTrue(test);
-
     }
+
+
 }

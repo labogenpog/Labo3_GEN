@@ -7,11 +7,15 @@ public class Dice {
 
     void roll (){
         int random = (int)(Math.random() * 6) + 1;
-        faceValue = (char)random;
+        setFaceValue((char)random);
     }
 
     public char getFaceValue() {
         return faceValue;
+    }
+
+    protected void setFaceValue(char faceValue) {
+        this.faceValue = faceValue;
     }
 
     public ArrayList<Integer> values(){
