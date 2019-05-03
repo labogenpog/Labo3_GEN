@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,12 +13,19 @@ public class MGame {
     private Board board = new Board() ;
 
     public MGame(int playerCount){
+        if (playerCount < 2 || playerCount > 8){
+            throw new IllegalArgumentException("Invalid number of players");
+        }
         this.playerCount = playerCount;
         players = new ArrayList<Player>(this.playerCount);
 
         for(int i = 0; i < playerCount; ++i){
             players.add(i, new Player("Joueur " + (i + 1), board));
         }
+    }
+
+    public int getPlayerCount() {
+        return playerCount;
     }
 
     public void playGame(){
