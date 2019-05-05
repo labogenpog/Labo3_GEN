@@ -12,6 +12,11 @@ public class Cup {
         }
     }
 
+    public Cup(Dice[] diceArray){
+        this.numberOfDices = diceArray.length;
+        dices = diceArray;
+    }
+
     public void roll(){
         totalValues = 0;
         for(Dice d : dices){

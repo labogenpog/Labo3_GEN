@@ -6,13 +6,18 @@ public class Player {
     private int money;
 
     Player(String name, Board board){
+        this(name, board, new Cup(2));
+    }
+
+
+
+    Player(String name, Board board, Cup cup){
         this.name = name;
         this.board = board;
-        this.cup = new Cup(2);
+        this.cup = cup;
         this.money = 1500;
         piece = new Piece(name+"'s token", board.getSquareIndex(0));
     }
-
     void takeTurn(){
         cup.roll();
         char fvTot = (char) cup.getTotal();
@@ -26,6 +31,10 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    public Board getBoard() {
+        return board;
     }
 
     public void setName(String name) {
