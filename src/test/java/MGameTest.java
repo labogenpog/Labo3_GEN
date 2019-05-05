@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MGameTest {
 
+
     @ParameterizedTest
     @ValueSource (ints = {2, 3, 4, 5, 6, 7, 8})
     void correctNumberOfPlayer(int nbplayer) {

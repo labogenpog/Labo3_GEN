@@ -26,6 +26,9 @@ public class Board {
             }
         }
     }
+    public static int getSIZE() {
+        return SIZE;
+    }
 
     Square getSquare(Square oldLoc, char fvTot){
         return getSquareIndex( (getIndex(oldLoc) + fvTot) % SIZE );
